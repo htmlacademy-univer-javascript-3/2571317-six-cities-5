@@ -1,6 +1,16 @@
-import PlaceCard from './place-card.tsx';
+import PlaceCard, {TPlaceProps} from './place-card.tsx';
+import {PlaceType} from '../../enums.ts';
 
 function Home() {
+  const places: (TPlaceProps & {key: string})[] = [
+    {
+      name: 'Sample',
+      type: PlaceType.Room,
+      key: '1',
+      price: '&euro;80'
+    }
+  ];
+
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -91,7 +101,14 @@ function Home() {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                <PlaceCard></PlaceCard>
+                {places.map((place) => (
+                  <PlaceCard
+                    key={place.key}
+                    name={place.name}
+                    type={place.type}
+                    price={place.price}
+                  ></PlaceCard>
+                ))}
               </div>
             </section>
             <div className="cities__right-section">

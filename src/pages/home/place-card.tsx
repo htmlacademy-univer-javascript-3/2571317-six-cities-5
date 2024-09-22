@@ -1,4 +1,13 @@
-function PlaceCard() {
+import {PlaceType} from '../../enums.ts';
+import {placeTypeToString} from '../../constants.ts';
+
+export type TPlaceProps = {
+  name: string;
+  type: PlaceType;
+  price: string;
+}
+
+function PlaceCard(props: TPlaceProps) {
   return (
     <article className="cities__card place-card">
       <div className="cities__image-wrapper place-card__image-wrapper">
@@ -9,7 +18,7 @@ function PlaceCard() {
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
           <div className="place-card__price">
-            <b className="place-card__price-value">&euro;80</b>
+            <b className="place-card__price-value">{props.price}</b>
             <span className="place-card__price-text">&#47;&nbsp;night</span>
           </div>
           <button className="place-card__bookmark-button place-card__bookmark-button--active button" type="button">
@@ -31,9 +40,9 @@ function PlaceCard() {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">Wood and stone place</a>
+          <a href="#">{props.name}</a>
         </h2>
-        <p className="place-card__type">Room</p>
+        <p className="place-card__type">{placeTypeToString[props.type]}</p>
       </div>
     </article>
   );
