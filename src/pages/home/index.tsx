@@ -1,13 +1,16 @@
 import PlaceCard, {TPlaceProps} from './place-card.tsx';
 import {PlaceType} from '../../enums.ts';
 
-function Home() {
+type THomeProps = {
+  placeAmount: number
+}
+function Home(props: THomeProps) {
   const places: (TPlaceProps & {key: string})[] = [
     {
       name: 'Sample',
       type: PlaceType.Room,
       key: '1',
-      price: '&euro;80'
+      price: '80'
     }
   ];
 
@@ -107,7 +110,7 @@ function Home() {
                     name={place.name}
                     type={place.type}
                     price={place.price}
-                  ></PlaceCard>
+                  />
                 ))}
               </div>
             </section>

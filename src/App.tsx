@@ -1,7 +1,7 @@
 import Home from './pages/home';
 
 function App() {
-  return <Home></Home>;
+  return <Home placeAmount={1} />;
 }
 
 export default App;
