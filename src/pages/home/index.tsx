@@ -2,7 +2,7 @@ import PlaceCard, {TPlaceProps} from './place-card.tsx';
 import {PlaceType} from '../../enums.ts';
 
 type THomeProps = {
-  placeAmount: number
+  placeAmount: number;
 }
 function Home(props: THomeProps) {
   const places: (TPlaceProps & {key: string})[] = [
