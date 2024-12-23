@@ -1,5 +1,3 @@
-// src/store/actions/types.ts
-
 import { UserData } from '../../types/user';
 import { ErrorResponse } from '../types';
 import { Comment } from '../../types/comment';
@@ -12,12 +10,10 @@ export const Actions = {
   LOGOUT: 'LOGOUT',
   FETCH_OFFER_COMMENTS: 'FETCH_OFFER_COMMENTS',
   POST_OFFER_COMMENT: 'POST_OFFER_COMMENT'
-  // Другие действия
 } as const;
 
 export type ActionsType = typeof Actions[keyof typeof Actions];
 
-// CheckAuthStatus actions
 export type CheckAuthStatusPendingAction = {
 	type: `${ActionsType}/pending`;
 };
@@ -32,7 +28,6 @@ export type CheckAuthStatusRejectedAction = {
 	payload: ErrorResponse;
 };
 
-// Authorize actions
 export type AuthorizePendingAction = {
 	type: `${ActionsType}/pending`;
 };
@@ -47,7 +42,6 @@ export type AuthorizeRejectedAction = {
 	payload: ErrorResponse;
 };
 
-// Logout actions
 export type LogoutPendingAction = {
 	type: `${ActionsType}/pending`;
 };

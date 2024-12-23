@@ -27,7 +27,6 @@ const commentsSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // fetchOfferComments
       .addCase(fetchOfferComments.pending, (state) => {
         state.fetchStatus.loading = true;
         state.fetchStatus.error = null;
@@ -41,7 +40,6 @@ const commentsSlice = createSlice({
         state.fetchStatus.error = payload?.message;
       })
 
-      // postOfferComment
       .addCase(postOfferComment.pending, (state) => {
         state.postStatus.loading = true;
         state.postStatus.error = null;

@@ -38,7 +38,6 @@ const authSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // checkAuthStatus
       .addCase(checkAuthStatus.pending, (state) => {
         state.checkAuthStatus.loading = true;
       })
@@ -51,7 +50,6 @@ const authSlice = createSlice({
         state.checkAuthStatus.loading = false;
       })
 
-      // authorize
       .addCase(authorize.pending, (state) => {
         state.authorizeStatus.loading = true;
         state.authorizeStatus.error = null;
@@ -71,7 +69,6 @@ const authSlice = createSlice({
         state.authorizeStatus.error = payload?.message;
       })
 
-      // logout
       .addCase(logout.pending, (state) => {
         state.logoutStatus.loading = true;
       })

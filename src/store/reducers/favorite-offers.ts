@@ -28,7 +28,6 @@ const favoriteOffersSlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      // fetchFavoritesOffers
       .addCase(fetchFavoritesOffers.pending, (state) => {
         state.fetchStatus.loading = true;
         state.fetchStatus.error = null;
@@ -43,7 +42,6 @@ const favoriteOffersSlice = createSlice({
         state.fetchStatus.error = payload?.message;
       })
 
-      // changeFavoriteStatus
       .addCase(changeFavoriteStatus.pending, (state) => {
         state.postStatus.loading = true;
         state.postStatus.error = null;
